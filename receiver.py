@@ -1,6 +1,3 @@
-# receiver.py
-# Người nhận: nhận ảnh, kiểm tra hash, chữ ký, giải mã DES, lưu ảnh
-
 from flask import Flask, request, render_template, send_file, flash
 import os
 from utils import des_decrypt, verify_signature, sha512_hash, rsa_decrypt, load_rsa_private_key, load_rsa_public_key

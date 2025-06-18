@@ -39,7 +39,7 @@ def add_watermark(input_path, output_path, watermark_text):
     # Tạo một layer text riêng để xoay
     text_layer = Image.new("RGBA", (text_width, text_height), (0,0,0,0))
     text_draw = ImageDraw.Draw(text_layer)
-    text_draw.text((0, 0), watermark_text, font=font, fill=(255, 0, 0, 100))  # màu đỏ, alpha 100
+    text_draw.text((0, 0), watermark_text, font=font, fill=(255, 0, 0, 255))
 
     rotated_text = text_layer.rotate(45, expand=1)
     # Tính lại vị trí để dán vào giữa ảnh
