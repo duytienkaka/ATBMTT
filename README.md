@@ -77,4 +77,10 @@ Mọi ý kiến đóng góp, vui lòng tạo issue hoặc pull request tại:
 [https://github.com/duytienkaka/ATBMTT](https://github.com/duytienkaka/ATBMTT)
 
 ---
-**© 2025 Duy Tiến - duytienkaka@gmail.com**
+**© 2025 - Nhóm Nhập môn An toàn bảo mật thông tin**
+
+**Thành viên nhóm:**
+- 🧑‍💻 Phạm Đức Duy Tiến
+- 🧑‍💻 Nguyễn Quang Thịnh
+- 🧑‍💻 Dương Văn Việt
+---
