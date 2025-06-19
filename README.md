@@ -127,7 +127,7 @@ pip install pillow pycryptodome flask requests
 ## 📸 Demo giao diện
 
 | Giao diện gửi ảnh (Sender) | Giao diện nhận ảnh (Receiver) |
-|---------------------------|-------------------------------|----------------|
+|---------------------------|-------------------------------|
 | ![Sender GUI](assets/sender_gui.png) | ![Receiver GUI](assets/receiver_gui.png) |
 
 > *Bạn có thể thay thế `photo.jpg` bằng bất kỳ ảnh nào bạn muốn gửi.*
