@@ -1,22 +1,100 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Receiver Web</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='receiver.css') }}">
 </head>
+
 <body>
-    <div class="chat-box">
-        {% if img_exists %}
-            <div class="chat-bubble-left">
-                <img src="{{ url_for('show') }}" alt="Ảnh đã nhận">
-                <a href="{{ url_for('show') }}" download class="btn btn-sm btn-outline-primary mt-2">Tải ảnh về</a>
+    <header>
+        <div class="box-left">
+            <div class="logo">Nhom TTV</div>
+            <div class="link">
+                <ul>
+                    <li><a href="">Trang chủ</a></li>
+                    <li><a href="/templates/sender.html">Gán Watermark</a></li>
+                    <li><a href="">Lịch sử gán Watermark</a></li>
+                </ul>
             </div>
-        {% else %}
-            <div class="alert alert-warning">Chưa có ảnh nào được nhận.</div>
+        </div>
+        <div class="user">
+            <span>Xin chào, <strong>Alina</strong></span>
+            <a href="/logout" class="btn btn-danger">Đăng xuất</a>
+        </div>
+    </header>
+    <main>
+        <div class="chat-box-wrapper">
+            <div class="chat-box">
+                <div class="chat-left">
+                    {% if img_exists %}
+                    <img src="{{ url_for('show') }}" alt="Ảnh đã nhận" class="chat-image">
+                    {% else %}
+                    <div class="image-placeholder">Chưa có ảnh</div>
+                    {% endif %}
+                </div>
+                <div class="chat-right">
+                    {% if img_exists %}
+                    <p class="message-text">Đã nhận hình ảnh</p>
+                    <a href="{{ url_for('show') }}" download class="btn-download">Tải ảnh về</a>
+                    {% else %}
+                    <p class="message-text">Chưa có ảnh nào được nhận.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% if message %}
+        <div class="custom-alert">
+            <span>{{ message }}</span>
+        </div>
         {% endif %}
-    </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>SnapMark</h2>
+                <p>Bảo vệ hình ảnh của bạn bằng watermark đơn giản & an toàn.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Sản phẩm</h4>
+                <ul>
+                    <li><a href="#">Chèn watermark</a></li>
+                    <li><a href="#">Tải ảnh hàng loạt</a></li>
+                    <li><a href="#">Công cụ xử lý ảnh</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Hỗ trợ</h4>
+                <ul>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Theo dõi</h4>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Sử dụng mẫu từ SnapEdit</p>
+        </div>
+    </footer>
 </body>
+
 </html>
+<script>
+    setTimeout(() => {
+        const alert = document.querySelector('.custom-alert');
+        if (alert) alert.style.display = 'none';
+    }, 4000); // 4 giây
+</script>

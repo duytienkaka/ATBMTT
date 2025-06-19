@@ -1,0 +1,196 @@
+header {
+    background-color: #b8d5fc;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #343a40;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .box-left {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+header .link ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+header .link ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header .link ul li a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+header .user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-box-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.chat-box {
+    display: flex;
+    width: 70%;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    padding: 20px;
+    align-items: center;
+}
+
+/* Bên trái */
+.chat-left {
+    width: 50%;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.chat-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* Placeholder khi chưa có ảnh */
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6c757d;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+/* Bên phải */
+.chat-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    border-left: 1px solid #dee2e6;
+}
+
+.message-text {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.btn-download {
+    padding: 10px 15px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+    background-color: #0b5ed7;
+}
+
+
+.footer {
+    background-color: #0d0f1e;
+    color: #ccc;
+    padding: 60px 20px 30px;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.footer h2 {
+    font-size: 22px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    line-height: 1.6;
+}
+
+.footer h4 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #ccc;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #2c2f42;
+    padding-top: 20px;
+    font-size: 13px;
+    color: #777;
+}

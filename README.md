@@ -30,14 +30,6 @@
 - **Thông báo trạng thái:** Hiển thị thông báo khi nhận thành công hoặc có lỗi.
 - **Thiết kế đồng bộ với giao diện gửi:** Sử dụng Bootstrap, màu sắc hài hòa, dễ sử dụng.
 
-### **Trò chuyện (Chat)**
-- **Khung chat hiện đại:**  
-  - Bong bóng chat trái/phải như Messenger.
-  - Gửi và nhận tin nhắn realtime giữa hai thiết bị.
-  - Hỗ trợ gửi ảnh có watermark trực tiếp trong khung chat.
-- **Tin nhắn của mình:** Căn phải, màu xanh.
-- **Tin nhắn đối phương:** Căn trái, màu xám.
-- **Preview ảnh gửi/nhận:** Ảnh gửi đi hoặc nhận về sẽ hiển thị ngay trong khung chat.
 
 ---
 
@@ -134,9 +126,9 @@ pip install pillow pycryptodome flask requests
 
 ## 📸 Demo giao diện
 
-| Giao diện gửi ảnh (Sender) | Giao diện nhận ảnh (Receiver) | Giao diện chat |
+| Giao diện gửi ảnh (Sender) | Giao diện nhận ảnh (Receiver) |
 |---------------------------|-------------------------------|----------------|
-| ![Sender GUI](assets/sender_web.png) | ![Receiver GUI](assets/receiver_web.png) | ![Chat GUI](assets/chat_web.png) |
+| ![Sender GUI](assets/sender_gui.png) | ![Receiver GUI](assets/receiver_gui.png) |
 
 > *Bạn có thể thay thế `photo.jpg` bằng bất kỳ ảnh nào bạn muốn gửi.*
 
