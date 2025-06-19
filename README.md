@@ -38,8 +38,8 @@
 ```
 BMTT/
 │
-├── web_sender.py          # Flask app cho giao diện gửi ảnh (web)
-├── web_receiver.py        # Flask app cho giao diện nhận ảnh (web)
+├── sender.py          # Flask app cho giao diện gửi ảnh (web)
+├── receiver.py        # Flask app cho giao diện nhận ảnh (web)
 ├── utils.py               # Hàm tiện ích: watermark, mã hóa, ký số, hash
 ├── templates/
 │   ├── sender.html        # Giao diện web gửi ảnh (hiện đại, chuyên nghiệp)
@@ -78,18 +78,18 @@ pip install pillow pycryptodome flask requests
 #### **Chạy trên cùng một máy (test nội bộ):**
 - **Bước 1:** Mở terminal, chạy receiver (máy nhận):
     ```bash
-    python web_receiver.py
+    python receiver.py
     ```
     - Mặc định chạy trên `http://localhost:5001`
 - **Bước 2:** Mở terminal khác, chạy sender (máy gửi):
     ```bash
-    python web_sender.py
+    python sender.py
     ```
     - Mặc định chạy trên `http://localhost:5000`
 
 #### **Chạy trên hai máy khác nhau (mạng LAN):**
-- Máy A chạy `web_receiver.py`, lấy địa chỉ IP nội bộ (ví dụ: `192.168.1.10`).
-- Máy B chạy `web_sender.py`, sửa biến `RECEIVER_URL` trong file `web_sender.py` thành:
+- Máy A chạy `receiver.py`, lấy địa chỉ IP nội bộ (ví dụ: `192.168.1.10`).
+- Máy B chạy `sender.py`, sửa biến `RECEIVER_URL` trong file `sender.py` thành:
     ```python
     RECEIVER_URL = 'http://192.168.1.10:5001/receive'
     ```
