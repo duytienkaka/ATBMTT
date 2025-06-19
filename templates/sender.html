@@ -78,6 +78,10 @@
                 <p class="description">
                     Chỉ cần thả vào đây<br>
                 </p>
+                <div class="preview-wrapper" id="preview-container" style="display: none;">
+                    <p>Preview ảnh của bạn:</p>
+                    <img id="image-preview" src="#" alt="Preview" class="image-preview">
+                </div>
 
                 <div class="form-row">
                     <input type="text" name="watermark" placeholder="Watermark..." required>
@@ -246,5 +250,31 @@
     </footer>
 
 </body>
-
 </html>
+<script>
+    const photoInput = document.getElementById("photo");
+    const previewContainer = document.getElementById("preview-container");
+    const previewImage = document.getElementById("image-preview");
+
+    photoInput.addEventListener("change", function (event) {
+        const file = event.target.files[0];
+
+        if (file && file.type.startsWith("image/")) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                previewImage.src = e.target.result;
+                previewContainer.style.display = "block";
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            previewImage.src = "#";
+            previewContainer.style.display = "none";
+        }
+    });
+
+    photoInput.addEventListener("click", function () {
+        this.value = null;
+    });
+</script>
