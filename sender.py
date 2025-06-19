@@ -23,7 +23,7 @@ def index():
         if not photo or not watermark:
             flash('Vui lòng chọn ảnh và nhập watermark!', 'danger')
             return redirect(url_for('index'))
-        photo_path = 'temp_upload.jpg'
+        photo_path = 'Img_sender/temp_upload.jpg'
         photo.save(photo_path)
 
         # Xử lý bảo mật như sender.py

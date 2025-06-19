@@ -2,13 +2,42 @@
 
 ## 🚀 Giới thiệu
 
-**Secure Image Transfer with Watermark** là một hệ thống truyền nhận ảnh an toàn, được thiết kế nhằm bảo vệ bản quyền và đảm bảo tính toàn vẹn, xác thực của dữ liệu hình ảnh khi truyền qua mạng. Hệ thống sử dụng các kỹ thuật mã hóa, ký số và kiểm tra toàn vẹn hiện đại, đồng thời cung cấp giao diện web thân thiện, dễ sử dụng cho cả người gửi và người nhận.
+**Secure Image Transfer with Watermark** là một hệ thống truyền nhận ảnh an toàn, bảo vệ bản quyền và đảm bảo tính toàn vẹn, xác thực của dữ liệu hình ảnh khi truyền qua mạng. Hệ thống sử dụng các kỹ thuật mã hóa, ký số, kiểm tra toàn vẹn hiện đại, đồng thời cung cấp **giao diện web hiện đại, thân thiện, chuyên nghiệp** cho cả người gửi và người nhận.
 
-**Các công nghệ bảo mật sử dụng:**
-- **Mã hóa ảnh:** DES (Data Encryption Standard) – đảm bảo chỉ người nhận hợp lệ mới giải mã được ảnh.
-- **Trao đổi khóa & ký số:** RSA 2048-bit (PKCS#1 v1.5 + SHA-512) – xác thực nguồn gửi và bảo vệ khóa phiên.
-- **Kiểm tra toàn vẹn:** SHA-512 – phát hiện mọi thay đổi dữ liệu trong quá trình truyền.
-- **Bảo vệ bản quyền:** Thêm watermark chéo lên ảnh – chống sao chép, khẳng định quyền sở hữu.
+---
+
+## 🖼️ Mô tả giao diện chương trình
+
+### **Giao diện gửi ảnh (Sender)**
+- **Thiết kế hiện đại, chuyên nghiệp:** Sử dụng màu sắc gradient, icon, bố cục rõ ràng, thân thiện với người dùng.
+- **Thanh điều hướng:** Có logo, các liên kết nhanh như Trang chủ, Gán Watermark, Lịch sử watermark.
+- **Khu vực tải ảnh:**  
+  - Nút tải ảnh lên với icon nổi bật.
+  - Hỗ trợ kéo-thả ảnh hoặc chọn từ thiết bị.
+  - Có thể nhập watermark trực tiếp.
+  - Nút gửi ảnh rõ ràng, dễ thao tác.
+- **Ảnh mẫu:** Hiển thị các ảnh mẫu để người dùng thử nghiệm nhanh.
+- **Hướng dẫn sử dụng:**  
+  - Các bước chèn watermark minh họa bằng hình ảnh và mô tả chi tiết.
+- **Thông tin tính năng:**  
+  - Các box mô tả tính năng nổi bật như: tùy chỉnh watermark, xử lý hàng loạt, bảo mật, giao diện thân thiện.
+- **Footer:**  
+  - Thông tin thương hiệu, liên kết hỗ trợ, mạng xã hội, bản quyền.
+
+### **Giao diện nhận ảnh (Receiver)**
+- **Hiển thị ảnh nhận được:** Ảnh sẽ được hiển thị trực tiếp trên giao diện sau khi nhận thành công.
+- **Nút tải ảnh về:** Cho phép người dùng tải ảnh đã nhận về máy.
+- **Thông báo trạng thái:** Hiển thị thông báo khi nhận thành công hoặc có lỗi.
+- **Thiết kế đồng bộ với giao diện gửi:** Sử dụng Bootstrap, màu sắc hài hòa, dễ sử dụng.
+
+### **Trò chuyện (Chat)**
+- **Khung chat hiện đại:**  
+  - Bong bóng chat trái/phải như Messenger.
+  - Gửi và nhận tin nhắn realtime giữa hai thiết bị.
+  - Hỗ trợ gửi ảnh có watermark trực tiếp trong khung chat.
+- **Tin nhắn của mình:** Căn phải, màu xanh.
+- **Tin nhắn đối phương:** Căn trái, màu xám.
+- **Preview ảnh gửi/nhận:** Ảnh gửi đi hoặc nhận về sẽ hiển thị ngay trong khung chat.
 
 ---
 
@@ -21,9 +50,9 @@ BMTT/
 ├── web_receiver.py        # Flask app cho giao diện nhận ảnh (web)
 ├── utils.py               # Hàm tiện ích: watermark, mã hóa, ký số, hash
 ├── templates/
-│   ├── sender.html        # Giao diện web gửi ảnh (Bootstrap)
-│   └── receiver.html      # Giao diện web nhận ảnh (Bootstrap)
-├── static/                # (tuỳ chọn) Chứa ảnh, css, js nếu mở rộng
+│   ├── sender.html        # Giao diện web gửi ảnh (hiện đại, chuyên nghiệp)
+│   └── receiver.html      # Giao diện web nhận ảnh (hiện đại, chuyên nghiệp)
+├── static/                # Chứa ảnh, css, js, icon, v.v.
 ├── sender_private.pem     # Khóa riêng của sender (tự sinh lần đầu)
 ├── sender_public.pem      # Khóa công khai của sender
 ├── receiver_private.pem   # Khóa riêng của receiver (tự sinh lần đầu)
@@ -86,25 +115,9 @@ pip install pillow pycryptodome flask requests
     - Ảnh nhận được sẽ hiển thị trực tiếp trên giao diện.
     - Có thể tải ảnh về máy.
 
----
-
-## 🔒 Quy trình bảo mật
-
-1. **Người gửi (Sender):**
-    - Chọn ảnh và nhập watermark.
-    - Thêm watermark chéo lên ảnh.
-    - Sinh khóa phiên (session key) cho DES.
-    - Mã hóa ảnh bằng DES với session key và IV ngẫu nhiên.
-    - Ký số metadata (tên file, thời gian, watermark) bằng RSA private key.
-    - Mã hóa session key bằng RSA public key của receiver.
-    - Tính hash SHA-512 cho IV và ciphertext.
-    - Đóng gói tất cả thông tin vào một gói JSON, gửi qua HTTP POST tới receiver.
-
-2. **Người nhận (Receiver):**
-    - Nhận gói tin, giải mã session key bằng RSA private key.
-    - Kiểm tra hash và xác thực chữ ký.
-    - Nếu hợp lệ, giải mã ảnh bằng DES, lưu và hiển thị ảnh.
-    - Nếu không hợp lệ, báo lỗi toàn vẹn hoặc chữ ký.
+- **Chat:**  
+    - Nhắn tin realtime, gửi ảnh có watermark trực tiếp trong khung chat.
+    - Tin nhắn của mình sẽ nằm bên phải, đối phương bên trái, hiển thị rõ ràng như Facebook Messenger.
 
 ---
 
@@ -112,17 +125,18 @@ pip install pillow pycryptodome flask requests
 
 - **Watermark chéo:** Bảo vệ bản quyền, chống sao chép ảnh.
 - **Mã hóa & xác thực:** Đảm bảo an toàn, toàn vẹn, chống giả mạo.
-- **Giao diện web hiện đại:** Sử dụng Bootstrap, có preview ảnh gửi và hiển thị ảnh nhận trực tiếp.
+- **Giao diện web hiện đại:** Sử dụng Bootstrap, gradient, icon, preview ảnh gửi và hiển thị ảnh nhận trực tiếp.
+- **Trò chuyện realtime:** Chat hai chiều, gửi ảnh có watermark ngay trong khung chat.
 - **Dễ sử dụng:** Chỉ cần trình duyệt, không cần cài đặt thêm phần mềm ngoài Python.
-- **Có thể mở rộng:** Hỗ trợ nhiều ảnh, lịch sử gửi/nhận, chat box, xác thực nâng cao...
+- **Có thể mở rộng:** Hỗ trợ nhiều ảnh, lịch sử gửi/nhận, xác thực nâng cao...
 
 ---
 
 ## 📸 Demo giao diện
 
-| Giao diện gửi ảnh (Sender) | Giao diện nhận ảnh (Receiver) |
-|---------------------------|-------------------------------|
-| ![Sender GUI](assets/sender_gui.png) | ![Receiver GUI](assets/receiver_gui.png) |
+| Giao diện gửi ảnh (Sender) | Giao diện nhận ảnh (Receiver) | Giao diện chat |
+|---------------------------|-------------------------------|----------------|
+| ![Sender GUI](assets/sender_web.png) | ![Receiver GUI](assets/receiver_web.png) | ![Chat GUI](assets/chat_web.png) |
 
 > *Bạn có thể thay thế `photo.jpg` bằng bất kỳ ảnh nào bạn muốn gửi.*
 

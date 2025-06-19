@@ -4,9 +4,13 @@ from utils import des_decrypt, verify_signature, sha512_hash, rsa_decrypt, load_
 import base64
 import json
 
+
+
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
-OUTPUT = 'received_photo.jpg'
+folder_receiver = 'Img_Receiver'
+file_count =len([f for f in os.listdir(folder_receiver) if os.path.isfile(os.path.join(folder_receiver, f))])
+OUTPUT = f'Img_Receiver/received_photo{file_count + 1}.jpg'
 
 @app.route('/receive', methods=['POST'])
 def receive():
