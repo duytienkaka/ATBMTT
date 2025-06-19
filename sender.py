@@ -1,6 +1,3 @@
-# app.py
-# Ứng dụng Flask cho người gửi: gửi ảnh có watermark, mã hóa DES, ký số RSA, kiểm tra toàn vẹn SHA-512
-
 from flask import Flask, render_template, request, redirect, url_for, flash
 import requests
 import os
@@ -13,7 +10,7 @@ import time
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 
-RECEIVER_URL = 'http://localhost:5001/receive' 
+RECEIVER_URL = 'http://192.168.1.150:5001/receive' 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
