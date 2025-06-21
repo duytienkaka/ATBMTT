@@ -25,6 +25,10 @@ body {
     font-weight: 500;
     min-width: 220px;
 }
+header .link ul li a i,
+.user i {
+    margin-right: 8px;
+}
 
 /* You can support more types: warning, error */
 .alert-success {

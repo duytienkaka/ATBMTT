@@ -42,20 +42,39 @@
     {% endwith %}
     <header>
         <div class="box-left">
-            <div class="logo">Nhom TTV</div>
+            <div class="logo">
+                <i class="fas fa-water"></i> Nhom TTV
+            </div>
             <div class="link">
                 <ul>
-                    <li><a href="">Trang chủ</a></li>
-                    <li><a href="/templates/sender.html">Gán Watermark</a></li>
-                    <li><a href="">Lịch sử gán Watermark</a></li>
+                    <li>
+                        <a href="/">
+                            <i class="fas fa-home"></i> Trang chủ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/templates/sender.html">
+                            <i class="fas fa-file-image"></i> Gán Watermark
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-history"></i> Lịch sử gán Watermark
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
         <div class="user">
-            <span>Xin chào, <strong>Alina</strong></span>
-            <a href="/logout" class="btn btn-danger">Đăng xuất</a>
+            <span>
+                <i class="fas fa-user-circle"></i> Xin chào, <strong>Alina</strong>
+            </span>
+            <a href="/logout" class="btn btn-danger">
+                <i class="fas fa-sign-out-alt"></i> Đăng xuất
+            </a>
         </div>
     </header>
+
     <main>
         <div class="left">
             <h1 style="margin-bottom: 0;"><b>Chèn WaterMark</b></h1>
@@ -250,6 +269,7 @@
     </footer>
 
 </body>
+
 </html>
 <script>
     const photoInput = document.getElementById("photo");
