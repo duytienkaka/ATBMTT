@@ -248,7 +248,7 @@ Mọi ý kiến đóng góp, vui lòng tạo issue hoặc pull request tại:
 
 ---
 
-**© 2025 - Nhóm Nhập môn An toàn bảo mật thông tin**
+**© 2025 - Nhóm Sentinel 3**
 
 **👨‍💻 Thành viên nhóm:**
 > **Phạm Đức Duy Tiến**  
