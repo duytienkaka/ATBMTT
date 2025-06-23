@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Receiver Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='receiver.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h2>📊 SnapMark</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="/"><i class="fas fa-home"></i> Trang chủ</a></li>
+            <li><a href="/templates/sender.html"><i class="fas fa-image"></i> Gán Watermark</a></li>
+            <li><a href="#"><i class="fas fa-history"></i> Lịch sử Gán</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> Thống kê</a></li>
+            <li><a href="/logout" class="logout-link"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+        </ul>
+    </aside>
+
+    <!-- Nội dung chính -->
+    <div class="main-content">
+        <!-- Header nhỏ -->
+        <header class="topbar">
+            <span>👤 Xin chào, <strong>Alina</strong></span>
+        </header>
+
+        <!-- Main -->
+        <main>
+            <div class="chat-box-wrapper">
+                <div class="chat-box">
+                    <div class="chat-left">
+                        {% if img_exists %}
+                        <img src="{{ url_for('show') }}" alt="Ảnh đã nhận" class="chat-image">
+                        {% else %}
+                        <div class="image-placeholder">Chưa có ảnh</div>
+                        {% endif %}
+                    </div>
+                    <div class="chat-right">
+                        {% if img_exists %}
+                        <p class="message-text">Đã nhận hình ảnh</p>
+                        <a href="{{ url_for('show') }}" download class="btn-download">Tải ảnh về</a>
+                        {% else %}
+                        <p class="message-text">Chưa có ảnh nào được nhận.</p>
+                        {% endif %}
+                        <span style="font-style: italic; color: red;">Chú ý: Khi ảnh được nhận bị vỡ ảnh là do chương trình đã phóng to. Để có được ảnh chất lượng nhất hãy nhấn nút tải về</span>
+                    </div>
+                </div>
+            </div>
+            {% if message %}
+            <div class="custom-alert">
+                <span>{{ message }}</span>
+            </div>
+            {% endif %}
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <h2>SnapMark</h2>
+                    <p>Bảo vệ hình ảnh của bạn bằng watermark đơn giản & an toàn.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Sản phẩm</h4>
+                    <ul>
+                        <li><a href="#">Chèn watermark</a></li>
+                        <li><a href="#">Tải ảnh hàng loạt</a></li>
+                        <li><a href="#">Công cụ xử lý ảnh</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Theo dõi</h4>
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Sử dụng mẫu từ SnapEdit</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const alert = document.querySelector('.custom-alert');
+            if (alert) alert.style.display = 'none';
+        }, 4000);
+    </script>
+</body>
+</html>
