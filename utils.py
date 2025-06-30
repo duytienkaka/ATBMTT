@@ -1,7 +1,4 @@
-# utils.py
-# Các hàm tiện ích: watermark, mã hóa DES, RSA, hash SHA-512, ký số, kiểm tra chữ ký
 
-from PIL import Image, ImageDraw, ImageFont
 from Crypto.Cipher import DES, PKCS1_OAEP
 from Crypto.PublicKey import RSA
 from Crypto.Signature import pkcs1_15
@@ -14,7 +11,7 @@ import time
 # Thêm watermark vào ảnh
 def add_watermark(input_path, output_path, watermark_text):
     from PIL import Image, ImageDraw, ImageFont
-
+ 
     image = Image.open(input_path).convert("RGBA")
     watermark_layer = Image.new("RGBA", image.size, (0,0,0,0))
     draw = ImageDraw.Draw(watermark_layer)

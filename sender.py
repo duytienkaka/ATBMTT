@@ -10,7 +10,7 @@ import time
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 
-RECEIVER_URL = 'https://big-onions-attack.loca.lt/receive'
+RECEIVER_URL = 'http://localhost:5001/receive'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
